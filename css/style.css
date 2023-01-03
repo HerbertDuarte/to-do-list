@@ -1,0 +1,119 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color00: cornflowerblue;
+  --color01 : #2c2c2c;
+  --color02 : #fff;
+  --color03: #367af7;
+  --color04: #58fe58;
+  --color05: #ff2e2e;
+}
+
+body{
+  background-color: var(--color01);
+  color: var(--color02);
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+  text-align: center;
+  font-size: 2em;
+  background-color: var(--color00);
+  padding: 10px 20px;
+}
+
+header span{
+  font-weight: bold;
+}
+
+
+main{
+  padding: 20px;
+  text-align: center;
+  max-width: 450px;
+  margin: auto;
+}
+
+.menu div{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu label{
+  font-size: 1.7em;
+}
+
+#name{
+  height: 29px;
+  border-radius: 7px;
+  outline: 0;
+  border: 0;
+  text-indent: 10px;
+  font-size: 1em;
+}
+
+#btn{
+  padding: 7px 12px;
+  border-radius: 7px;
+  outline: 0;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.092);
+  color: var(--color02);
+  cursor: pointer;
+}
+
+#btn:hover{
+  background-color: var(--color00);
+}
+
+h2{
+  margin: 10px;
+}
+
+.tarefa{
+  background-color: rgba(255, 255, 255, 0.092);
+  padding: 10px 8px;
+  max-width: 285px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 7px;
+  min-height: 38px;
+}
+
+.tarefa span{
+  cursor: pointer;
+}
+
+#concluido:hover{
+  color: var(--color00);
+}
+
+#apagar:hover{
+  color: var(--color05);
+}
+
+footer{
+  text-align: center;
+}
+
+footer a{
+  text-decoration: none;
+  color: var(--color00);
+}
+
+footer a:hover{
+  color: var(--color03);
+}
