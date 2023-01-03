@@ -36,12 +36,11 @@ header span{
 main{
   padding: 20px;
   text-align: center;
-  max-width: 450px;
   margin: auto;
 }
 
 .menu div{
-  margin: 20px;
+  margin: 20px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -60,6 +59,8 @@ main{
   border: 0;
   text-indent: 10px;
   font-size: 1em;
+  width: 100%;
+  max-width: 220px;
 }
 
 #btn{
@@ -96,8 +97,11 @@ h2{
 .tarefa span{
   cursor: pointer;
 }
-
-#concluido:hover{
+#concluido{
+  font-size: 1.2em;
+}
+#concluido:hover,
+#concluido:visited{
   color: var(--color00);
 }
 
@@ -116,4 +120,13 @@ footer a{
 
 footer a:hover{
   color: var(--color03);
+}
+
+@media (min-width:600px) {
+  #name{
+    max-width: 580px;
+  }
+  .tarefa{
+    max-width: 640px;
+  }
 }

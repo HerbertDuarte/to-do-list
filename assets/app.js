@@ -1,12 +1,10 @@
-var i = 0
-
 addTask = () =>{
   
   let InputName = document.getElementById('name')
+
   let name = InputName.value
 
   InputName.value = ''
-  i++
   
   criarTarefa(name)
 }
@@ -16,25 +14,51 @@ criarTarefa = (TaskName) =>{
   const res = document.getElementById('resultado')
   const tarefavazia = document.getElementById('tarefavazia')
 
-  if(tarefavazia){
-    res.removeChild(tarefavazia)
+  if(TaskName.length == 0){
+    alert('digite uma tarefa')
   }
-
-  res.innerHTML += (
-    `<div class="tarefa" id="tarefa${i}">
-
-    <span>${TaskName}</span>
     
-    <div class="btns">
-      <span class="icon" id="concluido">
-        <i class="fa-solid fa-check-double"></i>
-      </span>
-      <span class="icon" id="apagar">
-        <i class="fa-solid fa-trash"></i>
-      </span>
-    </div>
+  else{
+      
+    if(tarefavazia){
+      res.removeChild(tarefavazia)
+    }
+
     
-  </div>`
-  )
-  
+
+    res.innerHTML += (
+      `<div class="tarefa">
+      
+      <span>${TaskName}</span>
+      
+      <div class="btns">
+      <span class="icon" id="concluido" onclick="concluir(this)">
+      <i class="fa-solid fa-check"></i>
+      </span>
+      <span class="icon" id="apagar" onclick="remover(this)">
+      <i class="fa-solid fa-trash"></i>
+      </span>
+      </div>
+
+      </div>`
+      )   
+  }
 } 
+
+remover = (e) => e.parentNode.parentNode.remove()
+
+concluir = (e) =>{
+  let pai = e.parentNode.parentNode
+  let filho = pai.children[0]
+  if(filho.style.textDecoration == 'line-through'){
+    filho.style.textDecoration = 'none'
+    filho.style.fontStyle = 'normal'
+    filho.style.color = 'white'
+    e.children[0].style.color = 'white'
+  }else{
+    filho.style.textDecoration = 'line-through'
+    filho.style.fontStyle = 'italic'
+    filho.style.color = 'cornflowerblue'
+    e.children[0].style.color = 'cornflowerblue'
+  }
+}
