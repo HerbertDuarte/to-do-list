@@ -5,6 +5,8 @@
 }
 
 :root{
+
+  font-size: 17px;
   --color00: #6495ed;
   --color01 : #2c2c2c;
   --color02 : #fff;
@@ -23,7 +25,7 @@ body{
 
 header{
   text-align: center;
-  font-size: 2em;
+  font-size: 1.8em;
   background-color: var(--color00);
   padding: 10px 20px;
 }
@@ -80,6 +82,10 @@ main{
 
 h2{
   margin: 10px;
+}
+
+.icon{
+  margin: 0 5px;
 }
 
 .tarefa{
