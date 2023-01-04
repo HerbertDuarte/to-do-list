@@ -73,6 +73,8 @@ armazenar = () =>{
   let res = document.getElementById('resultado')
   let tarefas = res.innerHTML
   localStorage.setItem('tarefas', tarefas)
+
+  inserirVazio()
 }
 
 verificar = () =>{
@@ -82,6 +84,14 @@ verificar = () =>{
     res.innerHTML = localStorage.tarefas
   }
 
+  inserirVazio()
+}
+
+inserirVazio = () =>{
+  if((localStorage.tarefas).trim() == '<h2>Minhas Tarefas</h2>'){
+    let res = document.getElementById('resultado')
+    res.innerHTML += '<div class="tarefa" id="tarefavazia"></div>'
+  }
 }
 
 window.onload = verificar()
