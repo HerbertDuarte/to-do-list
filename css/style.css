@@ -40,7 +40,7 @@ main{
 }
 
 .menu div{
-  margin: 20px 0;
+  margin: 20px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -128,5 +128,8 @@ footer a:hover{
   }
   .tarefa{
     max-width: 640px;
+  }
+  .menu div{
+    max-width: 630px;
   }
 }

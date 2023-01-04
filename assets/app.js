@@ -7,6 +7,7 @@ addTask = () =>{
   InputName.value = ''
   
   criarTarefa(name)
+  armazenar()
 }
 
 criarTarefa = (TaskName) =>{
@@ -45,7 +46,10 @@ criarTarefa = (TaskName) =>{
   }
 } 
 
-remover = (e) => e.parentNode.parentNode.remove()
+remover = (e) =>{
+  e.parentNode.parentNode.remove()
+  armazenar()
+}  
 
 concluir = (e) =>{
   let pai = e.parentNode.parentNode
@@ -61,4 +65,34 @@ concluir = (e) =>{
     filho.style.color = 'cornflowerblue'
     e.children[0].style.color = 'cornflowerblue'
   }
+
+  armazenar()
 }
+
+armazenar = () =>{
+  let res = document.getElementById('resultado')
+  let tarefas = res.innerHTML
+  localStorage.setItem('tarefas', tarefas)
+}
+
+verificar = () =>{
+  
+  if(localStorage.tarefas){
+    let res = document.getElementById('resultado')
+    res.innerHTML = localStorage.tarefas
+  }
+
+}
+
+window.onload = verificar()
+
+
+
+
+
+
+
+
+
+
+
