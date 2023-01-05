@@ -8,19 +8,21 @@
 
   font-size: 17px;
   --color00: #6495ed;
-  --color01 : #2c2c2c;
-  --color02 : #fff;
+  --color01: #2c2c2c;
+  --color02: #fff;
   --color03: #367af7;
   --color04: #58fe58;
   --color05: #ff2e2e;
+  --color06: #3c3c3c;
 }
 
 body{
   background-color: var(--color01);
   color: var(--color02);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
 }
 
 header{
@@ -39,6 +41,54 @@ main{
   padding: 20px;
   text-align: center;
   margin: auto;
+  position: relative;
+}
+
+.menu{
+  margin-top: 70px;
+}
+
+.mododiario{
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.balldiv{
+  background-color: var(--color06);
+  width:43px;
+  padding: 0 3px;
+  height: 22px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  margin: 5px auto;
+}
+
+#ball{
+  background-color: var(--color02);
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  transition: all .3s;
+  margin-bottom: 1px;
+}
+
+#ball i{
+  color: var(--color01);
+  font-size: 13px;
+  text-align: center;
+  transform: translateY(-2px);
+}
+
+.active{
+  background-color: var(--color00);
+}
+
+.active #ball{
+  transform: translateX(19px);
 }
 
 .menu div{
@@ -71,7 +121,7 @@ main{
   border-radius: 7px;
   outline: 0;
   border: 0;
-  background-color: rgba(255, 255, 255, 0.092);
+  background-color: var(--color06);
   color: var(--color02);
   cursor: pointer;
 }
@@ -84,12 +134,23 @@ h2{
   margin: 10px;
 }
 
-.icon{
-  margin: 0 5px;
+
+
+.btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 60px;
+}
+
+.icon1{
+  padding: 0 5px;
 }
 
 .tarefa{
-  background-color: rgba(255, 255, 255, 0.092);
+  background-color: var(--color06);
   padding: 10px 8px;
   margin: 10px auto;
   display: flex;
@@ -122,6 +183,7 @@ h2{
 
 footer{
   text-align: center;
+  padding-bottom: 20px;
 }
 
 footer a{
@@ -131,4 +193,10 @@ footer a{
 
 footer a:hover{
   color: var(--color03);
+}
+
+.on{
+  font-style: italic;
+  text-decoration: line-through;
+  color:var(--color00)
 }

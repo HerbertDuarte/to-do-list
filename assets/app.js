@@ -25,24 +25,23 @@ criarTarefa = (TaskName) =>{
       res.removeChild(tarefavazia)
     }
 
-    
-
     res.innerHTML += (
       `<div class="tarefa">
       
       <span>${TaskName}</span>
       
       <div class="btns">
-      <span class="icon" id="concluido" onclick="concluir(this)">
+      <span class="icon1" id="concluido" onclick="concluir(this)">
       <i class="fa-solid fa-check"></i>
       </span>
-      <span class="icon" id="apagar" onclick="remover(this)">
+      <span class="icon2" id="apagar" onclick="remover(this)">
       <i class="fa-solid fa-trash"></i>
       </span>
       </div>
 
       </div>`
-      )   
+      )
+      i++  
   }
 } 
 
@@ -54,16 +53,12 @@ remover = (e) =>{
 concluir = (e) =>{
   let pai = e.parentNode.parentNode
   let filho = pai.children[0]
-  if(filho.style.textDecoration == 'line-through'){
-    filho.style.textDecoration = 'none'
-    filho.style.fontStyle = 'normal'
-    filho.style.color = 'white'
-    e.children[0].style.color = 'white'
+  if(filho.classList == 'on'){
+    filho.classList.remove('on')
+    
   }else{
-    filho.style.textDecoration = 'line-through'
-    filho.style.fontStyle = 'italic'
-    filho.style.color = 'cornflowerblue'
-    e.children[0].style.color = 'cornflowerblue'
+    filho.classList.add('on')
+    
   }
 
   armazenar()
@@ -78,6 +73,8 @@ armazenar = () =>{
 }
 
 verificar = () =>{
+
+  verificarCheckin()
   
   if(localStorage.tarefas){
     let res = document.getElementById('resultado')
@@ -85,7 +82,9 @@ verificar = () =>{
   }
 
   inserirVazio()
+  resetTarefas()
 }
+
 
 inserirVazio = () =>{
   if((localStorage.tarefas).trim() == '<h2>Minhas Tarefas</h2>'){
@@ -97,11 +96,81 @@ inserirVazio = () =>{
 window.onload = verificar()
 
 
+//-------------------MODO DIARIO ------------------------
+
+function modoDiario(){
+
+  guardarCheckIn()
+
+}
+
+function guardarData(){
+
+  if(localStorage.checkin == 1){
+
+    let agr = new Date()
+
+    let dia = agr.getDay() + 1
+    let mes = agr.getMonth() + 1
+
+    localStorage.setItem('mes', mes)
+    localStorage.setItem('dia', dia)
+
+  }
+}
 
 
+function guardarCheckIn(){
 
+  const btn = document.querySelector('.balldiv')
 
+  if(btn.classList == 'balldiv active'){
+    btn.classList.remove('active')
 
+    localStorage.setItem('checkin', 0)
+
+  }else{
+    btn.classList.add('active')
+    localStorage.setItem('checkin', 1)
+  }
+}
+
+function verificarCheckin(){
+  const btn = document.querySelector('.balldiv')
+
+  if(localStorage.checkin){
+
+    if(localStorage.checkin == 1){
+      btn.classList.add('active')
+
+    }else{
+      btn.classList.remove('active')
+    }
+  }
+}
+
+function resetTarefas(){
+  
+  if(localStorage.checkin == 1){
+
+    let agr = new Date()
+    
+    let dia = agr.getDay() + 1
+    let mes = agr.getMonth() + 1
+    
+    let ons = document.getElementsByClassName('tarefa')
+    
+    if(dia > localStorage.dia || mes > localStorage.mes){
+      for(let i = 0; i < ons.length ; i++){
+        if((ons[i].children[0]).classList == 'on'){
+          (ons[i].children[0]).classList.remove('on')
+        }
+      } 
+    }
+  }
+
+    
+}
 
 
 
