@@ -94,7 +94,6 @@ inserirVazio = () =>{
 
 window.onload = verificar()
 
-
 //-------------------MODO DIARIO ------------------------
 
 function modoDiario(){
@@ -168,7 +167,6 @@ function resetTarefas(){
     }
   }
 
-    
 }
 
 

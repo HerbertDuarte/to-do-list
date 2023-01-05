@@ -54,6 +54,10 @@ main{
   cursor: pointer;
 }
 
+.mododiario:hover > #hoverDiv{
+  opacity: 1;
+}
+
 .balldiv{
   background-color: var(--color06);
   width:43px;
@@ -134,8 +138,6 @@ h2{
   margin: 10px;
 }
 
-
-
 .btns{
   display: flex;
   flex-direction: row;
@@ -199,4 +201,28 @@ footer a:hover{
   font-style: italic;
   text-decoration: line-through;
   color:var(--color00)
+}
+
+#hoverDiv{
+  width: 250px;
+  background-color: var(--color06);
+  color: var(--color02);
+  position: absolute;
+  right: 100px;
+  border-radius: 10px;
+  padding: 3px;
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
+
+@media (max-width:390px) {
+  #hoverDiv{
+    width: 210px;
+  }
+}
+@media (max-width:350px) {
+  #hoverDiv{
+    width: 180px;
+  }
 }
