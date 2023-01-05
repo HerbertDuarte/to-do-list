@@ -41,7 +41,6 @@ criarTarefa = (TaskName) =>{
 
       </div>`
       )
-      i++  
   }
 } 
 
