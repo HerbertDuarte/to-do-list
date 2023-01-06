@@ -55,6 +55,7 @@ main{
 }
 
 .mododiario:hover > #hoverDiv{
+  visibility: visible;
   opacity: 1;
 }
 
@@ -212,6 +213,7 @@ footer a:hover{
   border-radius: 10px;
   padding: 3px;
   opacity: 0;
+  visibility: hidden;
   transition: opacity 1s;
   transition-delay: 1s;
 }
