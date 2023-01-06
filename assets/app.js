@@ -47,6 +47,7 @@ criarTarefa = (TaskName) =>{
 remover = (e) =>{
   e.parentNode.parentNode.remove()
   armazenar()
+  guardarData()
 }  
 
 concluir = (e) =>{
@@ -61,6 +62,7 @@ concluir = (e) =>{
   }
 
   armazenar()
+  guardarData()
 }
 
 armazenar = () =>{
