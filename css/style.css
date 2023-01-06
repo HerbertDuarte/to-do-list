@@ -203,6 +203,16 @@ footer a:hover{
   text-decoration: line-through;
   color:var(--color00)
 }
+.on ~ .btns{
+  color: var(--color00);
+}
+
+#apagar i{
+  color: var(--color02);
+}
+#apagar i:hover{
+  color: var(--color05);
+}
 
 #hoverDiv{
   width: 250px;
