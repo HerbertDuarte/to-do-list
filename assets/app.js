@@ -110,7 +110,7 @@ function guardarData(){
 
     let agr = new Date()
 
-    let dia = agr.getDay() + 1
+    let dia = agr.getDate()
     let mes = agr.getMonth() + 1
 
     localStorage.setItem('mes', mes)
@@ -155,7 +155,7 @@ function resetTarefas(){
 
     let agr = new Date()
     
-    let dia = agr.getDay() + 1
+    let dia = agr.getDate()
     let mes = agr.getMonth() + 1
     
     let ons = document.getElementsByClassName('tarefa')
