@@ -1,3 +1,9 @@
+document.addEventListener('keypress', function(e){
+  if(e.key ==="Enter"){
+    addTask()
+  }
+})
+
 addTask = () =>{
   
   let InputName = document.getElementById('name')
